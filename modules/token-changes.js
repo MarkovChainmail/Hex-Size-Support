@@ -91,8 +91,10 @@ Token.prototype.refresh = (function () {
 				this.hitArea = new PIXI.Polygon(shiftedPoints.flat())
 				
 				this.border.clear()
+				this.border.beginFill(0x00dd00, 1);
 				this.border.lineStyle(4, 0x000000, 0.8).drawPolygon(shiftedPoints.flat());
 				this.border.lineStyle(2, borderColor || 0xFF9829, 1.0).drawPolygon(shiftedPoints.flat());
+				this.border.endFill();
 
 				//Muck around with layering to get the border on top
 				if(alwaysShowBorder){
